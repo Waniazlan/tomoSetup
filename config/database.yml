@@ -19,7 +19,6 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-
 development:
   <<: *default
   database: tomo_setup_development
@@ -81,5 +80,5 @@ test:
 production:
   <<: *default
   database: tomo_setup_production
-  username: tomo_setup
-  password: <%= ENV["TOMO_SETUP_DATABASE_PASSWORD"] %>
+  # username: tomo_setup
+  # password: <%= ENV["TOMO_SETUP_DATABASE_PASSWORD"] %>
