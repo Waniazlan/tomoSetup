@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.2.1"
+gem 'slim-rails'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
@@ -19,6 +20,7 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'tomo'
+gem 'responders', '~> 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -58,3 +60,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 2.7"
