@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.msg-form {
+  @apply fixed bottom-0 w-11/12; /* 90% width */
+}
+
+.col-md-10 {
+  @apply h-screen overflow-scroll; /* Full height and scrollable */
+}
+
+.msg-content {
+  @apply w-4/5 mr-2; /* 80% width and margin-right */
+}
