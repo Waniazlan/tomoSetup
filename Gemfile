@@ -20,7 +20,7 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'tomo'
-gem "importmap-rails"
+# gem "importmap-rails"
 
 gem 'responders', '~> 3.0'
 # Use Redis adapter to run Action Cable in production
