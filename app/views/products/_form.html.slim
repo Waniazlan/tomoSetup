@@ -1,10 +1,20 @@
-h5 Add product
+.mx-auto.bg-red-200.h-96.w-96.rounded-sm
+  h5.text-center.font-semibold.py-2.text-md Add product
 
-= form_with model: [ @category, @category.products.build ] do |form|
-  p
-    = form.label :name
-    br
-    = form.text_field :name
-  .container
-    p.bg-blue-300.px-3.py-2.rounded-xl.hover:bg-blue-400.mx-auto.text-center
-      = form.submit 
+  .text-center.mx-3
+    = form_with model: [ @category, @category.products.build ] do |form|
+      p.font-semibold.py-3
+        = form.label :name
+        br
+        = form.text_field :name
+      p.font-semibold
+        = form.label :price
+        br
+        = form.text_field :price
+
+      = form.label :image, style: "display: block"
+      = form.file_field :image, accept: 'image/png,image/jpeg'
+    
+
+      p.bg-blue-300.px-3.py-2.rounded-xl.hover:bg-blue-400.mx-auto.text-center
+          = form.submit 

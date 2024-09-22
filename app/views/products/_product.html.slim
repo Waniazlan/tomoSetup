@@ -1,13 +1,17 @@
-.div.px-3.py-2.rounded-sm.mx-auto
-  .grid.grid-cols-3.gap-3
+.px-3.py-2.rounded-sm.mx-auto
+  .grid.grid-cols-1.md:grid-cols-4.lg:grid-cols-5.xl:grid-cols-6.gap-2.mx-3.my-3.py-3.mx-4.justify-items-center
     - @category.products.each do |product|
       .p-2.bg-white.border.border-gray-200.shadow-md.rounded-md
         .bg-cover.bg-center
-          - image_url = "https://cdn.pgmall.my/image/cache/catalog/seller_store/store23467/product/0072302001656125072da43a6e437fd4c299c9848671cf5d491-400x400.jpg"
-          .h-40.bg-cover.bg-center(style="background-image: url('#{image_url}');")
+          - if product.image.attached?
+            = image_tag product.image, class: 'mx-auto'
         .px-2.py-3.mx-auto
           p.text-lg.font-semibold.text-center
             = product.name
+          p.text-lg.font-semibold.text-center 
+            = product.price
+        .bg-blue-200 
+          / = button_to "Delete", category_product_path(@category, product), method: :delete, data: { confirm: "Are you sure you want to delete this product?" }, class: "text-white"
       
             
 

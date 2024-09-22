@@ -1,12 +1,20 @@
 
 p.text-blue-500 = notice
 
-h2.text-blue-500.bg-sky-200 All categories
+h2.text-blue-500.text-center.font-semibold All categories
 
-#categories
-  - @category.each do |category|
+/ a.btn.btn-primary.m-3 href=new_category_path
+/       | New category
+a.bg-blue-300.px-2.py-3.hover:bg-blue-100.rounded-md.m-3 href=new_category_path
+  svg class="w-5 h-5 inline-block mr-1" xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" stroke="currentColor"
+    path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" /
+  | New category
+ 
+
   
+
+#categories.grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-4.xl:grid-cols-5.gap-2.mx-3.my-3.py-3.mx-4.justify-items-center
+  - @category.each do |category|
     == render category
+    
    
-a.btn.btn-primary.m-3 href=new_category_path
-      | New category

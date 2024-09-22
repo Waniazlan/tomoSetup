@@ -14,18 +14,29 @@ class ProductsController <ApplicationController
         end
       
         def create
+          @category = Category.find(params[:category_id])
+          @product = @category.products.new(product_params) # Use new to build the product with the associated category
+          
+          if @product.save
+            redirect_to category_path(@category), notice: "Product created successfully."
+          else
+            render :new # Render the new template if there's an error
+          end
       
-          @category  =Category.find(params[:category_id])
-          @product = @category.products.create(product_params)
-          redirect_to category_path(@category)
+          # @category = Category.find(params[:category_id])
+          # @product = @category.products.create(params[:id]) # Use @category here
+          # redirect_to category_path(@category), status: :see_other
           
         end
   
         def destroy
-          @category = Category.find(params[:category_id])
-          @product = @Category.products.find(params[:id])
           @product.destroy
-          redirect_to category_path(@category), status: :see_other
+    redirect_to category_path(@category), notice: "Product was successfully deleted.", status: :see_other
+
+          # @category = Category.find(params[:category_id])
+          # @product = @Category.products.find(params[:id])
+          # @product.destroy
+          # redirect_to category_path(@category), status: :see_other
         end
   
       
@@ -41,6 +52,6 @@ class ProductsController <ApplicationController
         end
       
         def product_params
-          params.require(:product).permit(:name, :price ) 
+          params.require(:product).permit(:name, :price, :image) 
         end
   end

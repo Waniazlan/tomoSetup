@@ -15,9 +15,10 @@ html
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+ 
 
 
   body
     =render 'headers/header'
-    .container
+    .py-2
       = yield
