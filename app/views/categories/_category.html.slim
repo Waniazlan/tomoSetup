@@ -1,12 +1,20 @@
 .px-3.py-2.rounded-sm.mx-auto id="#{dom_id category}"
-.grid.grid-col-3.gap-2[style="width: 12rem;"] 
-   .p-2.bg-white.border.border-gray-200.shadow-md.rounded-md
-      img.card-img-top[src="https://www.tmaker.my/wp-content/uploads/2022/12/custom-printing-tshirt-design-nho1100-basil.png" alt="Card image cap"]
-      .card-body
-         p.text-lg.font-semibold.text-center
+   .grid.grid-col-3.gap-2[style="width: 12rem;"] 
+      .p-2.bg-white.border.border-gray-200.shadow-md.rounded-md
+         - if category.image.attached?
+         = image_tag category.image, class: 'mx-auto'
+         .py-2
+            p.text-lg.font-semibold.text-center
             = category.title
-         a.px-3.py-2.rounded-xl.bg-blue-300.hover:bg-blue-400.mx-auto href=category_products_path(category_id: category.id)
-            | Show products
+
+            .py-2.flex.align-center.gap-2
+               a.p-2.font-semibold.rounded-xl.bg-blue-300.hover:bg-blue-400.mx-auto.text-center.flex.gap-2.items-center href=category_products_path(category_id: category.id)
+                  <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                  </svg>
+                  | Show
+
+               = button_to "Delete", category, method: :delete, data: { confirm: "Are you sure?" } 
 
 
 
