@@ -1,0 +1,31 @@
+- user_id = current_user&.id
+.flex-1.overflow-y-scroll.px-2#{user_id}
+   - if message.user_id == user_id
+    .px-4.py-2#{user_id}
+    .flex.items-center.mb-2
+      img.w-8.h-8.rounded-full.mr-2 src="https://picsum.photos/50/50" alt="User Avatar"
+      .font-medium 
+      = message.user.username
+    .bg-white.rounded-lg.p-2.shadow.mb-2.max-w-sm
+      = message.content
+   -else
+    .flex.items-end.mb-2
+      img.w-8.h-8.rounded-full.mr-2 src="https://picsum.photos/50/49" alt="User Avatar"
+      .font-medium 
+      = message.user.username
+    .bg-white.rounded-lg.p-2.shadow.mb-2.max-w-sm
+      = message.content
+
+
+
+
+/ div class="cont-#{user_id} flex justify-end"
+/   div class="message-box msg-#{user_id} bg-blue-500 p-2 rounded-lg"
+/     - unless message.room.is_private
+/       h6 class="name font-bold text-white"
+/         = message.user.username
+/     p class="text-white"
+/       = message.content
+      
+      
+

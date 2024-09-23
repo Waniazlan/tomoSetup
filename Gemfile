@@ -20,6 +20,8 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 gem 'tomo'
+gem 'redis'
+
 # gem "importmap-rails"
 
 gem 'responders', '~> 3.0'
