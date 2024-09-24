@@ -74,7 +74,7 @@ deploy do
   run "rails:db_create"
   run "rails:db_migrate"
   run "rails:db_seed"
-  # run "rails:assets_precompile"
+  run "rails:assets_precompile"
   run "core:symlink_current"
   run "puma:restart"
   run "puma:check_active"
