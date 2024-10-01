@@ -13,11 +13,15 @@
       a href="/" class="text-gray-300 hover:text-white" Home
       a href="/categories" class="text-gray-300 hover:text-white" Categories
       a href="/rooms" class="text-gray-300 hover:text-white" Chat Rooms
-      a href="#" class="text-gray-300 hover:text-white" Contact
+      = button_to 'Sign out', destroy_user_session_path, method: :delete, class: "text-gray-300 hover:text-white"
+
+      / a href="users/sign_out" class="text-gray-300 hover:text-white" Sign out
 
   
   #mobile-menu.md:hidden.hidden.bg-gray-800.space-y-2.px-4.py-2
     a href="/" class="block text-gray-300 hover:text-white" Home
     a href="/categories" class="block text-gray-300 hover:text-white" Categories
     a href="/rooms" class="block text-gray-300 hover:text-white" Chat Room
-    a href="#" class="block text-gray-300 hover:text-white" Contact
+    = button_to 'Sign out', destroy_user_session_path, method: :delete, class: "text-gray-300 hover:text-white"
+
+    / a href="users/sign_out" class="block text-gray-300 hover:text-white" Sign out

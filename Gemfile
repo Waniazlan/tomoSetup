@@ -23,7 +23,8 @@ gem 'tomo'
 gem 'redis', '5.3.0'
 gem 'redis-client', '0.22.2'
 
-
+gem "devise"
+gem "acts_as_tenant"
 # gem "importmap-rails"
 
 gem 'responders', '~> 3.0'
