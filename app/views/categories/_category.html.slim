@@ -1,8 +1,8 @@
 .px-3.py-2.rounded-sm.mx-auto id="#{dom_id category}"
    .grid.grid-col-3.gap-2[style="width: 12rem;"] 
       .p-2.bg-white.border.border-gray-200.rounded-lg.shadow.dark:bg-gray-800.dark:border-gray-700
-         - if category.image.attached?
-         = image_tag category.image, class: 'mx-auto'
+         / - if category.image.attached?
+         / = image_tag category.image, class: 'mx-auto'
          .py-2
          .text-lg.font-semibold.text-center.text-white
             = category.title
