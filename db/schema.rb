@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_01_014832) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_07_031246) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,6 +49,20 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_014832) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "blorgh_articles", force: :cascade do |t|
+    t.string "title"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blorgh_comments", force: :cascade do |t|
+    t.integer "article_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -76,7 +90,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_014832) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
-    t.bigint "category_id", null: false
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_products_on_category_id"
@@ -106,5 +120,4 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_01_014832) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
-  add_foreign_key "products", "categories"
 end

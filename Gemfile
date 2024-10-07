@@ -25,6 +25,8 @@ gem 'redis-client', '0.22.2'
 
 gem "devise"
 gem "acts_as_tenant"
+gem "blorgh", path: "engines/blorgh"
+
 # gem "importmap-rails"
 
 gem 'responders', '~> 3.0'
@@ -69,3 +71,4 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.7"
+

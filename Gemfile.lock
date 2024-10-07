@@ -1,3 +1,9 @@
+PATH
+  remote: engines/blorgh
+  specs:
+    blorgh (0.1.0)
+      rails (>= 7.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -330,6 +336,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_tenant
+  blorgh!
   bootsnap
   brakeman
   capybara
