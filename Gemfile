@@ -25,7 +25,7 @@ gem 'redis-client', '0.22.2'
 
 gem "devise"
 gem "acts_as_tenant"
-gem "blorgh", path: "engines/blorgh"
+
 
 # gem "importmap-rails"
 

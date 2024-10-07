@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'categories#index'
   devise_for :users
-  mount Blorgh::Engine, at: "/blog"
+  
   # resources :rooms do
   #   resources :messages
   # end
